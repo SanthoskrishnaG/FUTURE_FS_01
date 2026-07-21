@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Backend build
+backend/dist/
+
+# Database (do NOT commit the actual DB to git)
+backend/prisma/portfolio.db
+backend/prisma/portfolio.db-journal
+
+# Environment files
+.env
+.env.local
+frontend/.env.local
+backend/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Prisma
+backend/node_modules/.prisma/

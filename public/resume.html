@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Santhoskrishna G | Software Developer & Cyber Security</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --primary-dark: #1D4ED8;
+            --text-dark: #1F2937;
+            --text-light: #4B5563;
+            --bg-light: #F3F4F6;
+            --border: #E5E7EB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .no-print-header {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .btn-print {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-print:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Resume Document Container */
+        .resume-card {
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        /* Header Style */
+        .resume-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .resume-title-block h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .resume-title-block h2 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .resume-contact-block {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .resume-contact-block p {
+            margin-bottom: 3px;
+        }
+
+        .resume-contact-block a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .resume-contact-block a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Layout */
+        .resume-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+        }
+
+        .summary-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        /* Experience and Education entries */
+        .entry {
+            margin-bottom: 15px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .entry-subheader {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+
+        .entry-list {
+            margin-left: 18px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .entry-list li {
+            margin-bottom: 3px;
+        }
+
+        /* Grid for projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .project-item h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .project-item .project-tech {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .project-item p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        /* Skills Layout */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .skills-row {
+            display: flex;
+            font-size: 0.85rem;
+        }
+
+        .skills-category {
+            font-weight: 600;
+            width: 160px;
+            color: var(--text-dark);
+            flex-shrink: 0;
+        }
+
+        .skills-list {
+            color: var(--text-light);
+        }
+
+        /* Leadership entries */
+        .leadership-list {
+            margin-left: 18px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .leadership-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Achievements list */
+        .achievements-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            list-style-type: square;
+            margin-left: 18px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Print Override */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .no-print-header {
+                display: none;
+            }
+            .resume-card {
+                padding: 0;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px;
+            }
+            .resume-card {
+                padding: 20px;
+            }
+            .resume-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .resume-contact-block {
+                text-align: left;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-row {
+                flex-direction: column;
+                gap: 2px;
+            }
+            .skills-category {
+                width: auto;
+            }
+            .achievements-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Navigation and Print Button -->
+    <div class="no-print-header">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Portfolio
+        </a>
+        <button class="btn-print" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Print / Save as PDF
+        </button>
+    </div>
+
+    <!-- Resume Document -->
+    <div class="resume-card">
+        <header class="resume-header">
+            <div class="resume-title-block">
+                <h1>Santhoskrishna G</h1>
+                <h2>M.Sc. Software Systems Student</h2>
+            </div>
+            <div class="resume-contact-block">
+                <p>Coimbatore, Tamil Nadu, India</p>
+                <p><a href="mailto:santhoskrishnag37@gmail.com">santhoskrishnag37@gmail.com</a></p>
+                <p><a href="https://github.com/SanthoskrishnaG" target="_blank">github.com/SanthoskrishnaG</a></p>
+                <p><a href="https://www.linkedin.com/in/santhoskrishna-gopinath-8aa739321?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">linkedin.com/in/santhoskrishna-gopinath-8aa739321</a></p>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <section class="resume-section">
+            <h3 class="section-title">Professional Summary</h3>
+            <p class="summary-text">
+                Computer Science student currently pursuing an integrated M.Sc. in Software Systems at Coimbatore Institute of Technology (CIT). Strongly focused on software engineering principles and cyber security standards. Demonstrates balanced analytical and leadership capabilities as a Yoga Club Joint Secretary and Cyber Security Intern, aiming to secure software design lifecycles through innovative coding structures.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h3 class="section-title">Education</h3>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Coimbatore Institute of Technology (CIT)</span>
+                    <span>2024 - Present (3rd Year)</span>
+                </div>
+                <div class="entry-subheader">
+                    <span>M.Sc. Software Systems (5-Year Integrated)</span>
+                    <span>Currently Pursuing</span>
+                </div>
+                <ul class="entry-list">
+                    <li>Key Subjects: Object-Oriented Programming, Database Management Systems, Web Application Development, Microprocessors &amp; Assembly.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="resume-section">
+            <h3 class="section-title">Professional Experience</h3>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Blue Desk</span>
+                    <span>June 2026 - Present</span>
+                </div>
+                <div class="entry-subheader">
+                    <span>Cyber Security Intern</span>
+                    <span>Coimbatore, TN</span>
+                </div>
+                <ul class="entry-list">
+                    <li>Developing a functional understanding of cybersecurity principles and application security practices.</li>
+                    <li>Analyzing networks to understand routing security protocols, cryptography bounds, and traffic scanners.</li>
+                    <li>Investigating web application security basics (OWASP Top 10 vulnerabilities) and testing methodologies.</li>
+                    <li>Conducting security assessments and basic threat analysis under professional mentorship.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="resume-section">
+            <h3 class="section-title">Academic Projects</h3>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h4>Train Ticket Reservation System</h4>
+                    <div class="project-tech">C Programming</div>
+                    <p>A console reservation framework supporting boarding availability search, ticket cancellations, and traveler records storage utilizing flat-file streams.</p>
+                </div>
+                <div class="project-item">
+                    <h4>Parcel Delivery Service</h4>
+                    <div class="project-tech">HTML, CSS, JavaScript, PHP, MySQL</div>
+                    <p>A responsive booking panel with tracking metrics, shipping log managers, customer accounts, and shipment reports.</p>
+                </div>
+                <div class="project-item">
+                    <h4>ATM Simulator</h4>
+                    <div class="project-tech">Assembly Language, EMU8086</div>
+                    <p>Low-level microprocessor-based system simulating authentication steps, currency transactions, cash checks, and interrupt handlers.</p>
+                </div>
+                <div class="project-item">
+                    <h4>Bank Management System</h4>
+                    <div class="project-tech">Java, OOP principles</div>
+                    <p>Object-oriented accounts database organizing withdrawals, deposits, statement generation, exception safeguards, and transactional boundaries.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="resume-section">
+            <h3 class="section-title">Technical &amp; Personal Skills</h3>
+            <div class="skills-container">
+                <div class="skills-row">
+                    <div class="skills-category">Programming:</div>
+                    <div class="skills-list">Java, C, HTML, CSS, JavaScript, SQL, Assembly</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skills-category">Tools &amp; IDEs:</div>
+                    <div class="skills-list">Git, GitHub, VS Code, EMU8086</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skills-category">Core Concepts:</div>
+                    <div class="skills-list">OOP, DBMS, Web Development, Cyber Security Fundamentals, Problem Solving</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skills-category">Interpersonal:</div>
+                    <div class="skills-list">Leadership, Event Coordination, Team Management, Communication</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section class="resume-section">
+            <h3 class="section-title">Leadership &amp; Activities</h3>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Yoga Club (CIT)</span>
+                    <span>Joint Secretary</span>
+                </div>
+                <ul class="leadership-list">
+                    <li>Organizing wellness sessions and campus programs; coordinating schedules for club volunteers and guest instructors.</li>
+                </ul>
+            </div>
+            <div class="entry" style="margin-top: 8px;">
+                <div class="entry-header">
+                    <span>Dramatix Club &amp; Quiz Club (CIT)</span>
+                    <span>Active Member</span>
+                </div>
+                <ul class="leadership-list">
+                    <li>Participated in cultural theater operations, event stage setup, and technical quiz circles representing the institute.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="resume-section">
+            <h3 class="section-title">Achievements</h3>
+            <ul class="achievements-list">
+                <li>Coordinated multiple campus-wide wellness and event assemblies.</li>
+                <li>Completed multiple engineering applications on register, compiler, and database levels.</li>
+                <li>Actively contributing to various college cultural and technical societies.</li>
+                <li>Secured a specialized Cyber Security Internship at Blue Desk early in the academic course.</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
