@@ -1,0 +1,15 @@
+{
+  "name": "gsk-portfolio",
+  "version": "1.0.0",
+  "description": "Full-Stack Portfolio — Santhoskrishna G (M.Sc Software Systems)",
+  "private": true,
+  "scripts": {
+    "dev": "cd backend && npm run dev",
+    "start": "cd backend && npm start",
+    "install:all": "cd backend && npm install",
+    "db:push": "cd backend && npx prisma db push",
+    "db:generate": "cd backend && npx prisma generate",
+    "db:studio": "cd backend && npx prisma studio",
+    "build": "cd backend && npm run build"
+  }
+}
