@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1784735579193,
+    "name": "Test User",
+    "email": "test@example.com",
+    "message": "Hello world!",
+    "createdAt": "2026-07-22T15:52:59.193Z"
+  },
+  {
+    "id": 1784738765901,
+    "name": "Tester",
+    "email": "tester@example.com",
+    "message": "Does email work?",
+    "createdAt": "2026-07-22T16:46:05.901Z"
+  }
+]
